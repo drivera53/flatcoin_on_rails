@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_25_105055) do
+ActiveRecord::Schema.define(version: 2021_04_25_150356) do
 
   create_table "portfolios", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "balance"
+    t.integer "current_balance"
+    t.integer "initial_balance"
     t.integer "likes", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
+    t.string "email"
+    t.string "uid"
+    t.string "provider"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

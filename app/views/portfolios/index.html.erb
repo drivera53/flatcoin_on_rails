@@ -5,7 +5,7 @@
   <% @portfolio.each do |portf| %>
     <li><%= link_to portf.name, portfolio_path(portf) %></li>
     <li><%= portf.description %></li>
-    <li><%= portf.balance %></li>
+    <li>$<%= portf.initial_balance %></li>
     <br>
   <% end %>
 </ul>

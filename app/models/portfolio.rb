@@ -1,7 +1,7 @@
 class Portfolio < ApplicationRecord
-    def self.search(query)
-        self.where("name like %?%", query)
-    end
+
+    # You must include at least one class level ActiveRecord scope method
+    scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%") }
 
     def self.most_recent
         self.order(created_at: :asc)

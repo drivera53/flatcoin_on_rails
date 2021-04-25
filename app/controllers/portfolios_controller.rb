@@ -1,4 +1,6 @@
 class PortfoliosController < ApplicationController
+    before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
+
     def index
         @portfolio = Portfolio.all
     end
@@ -49,7 +51,7 @@ class PortfoliosController < ApplicationController
 
     private
     def portfolio_params
-        params.require(:portfolio).permit( :name, :description, :balance)
+        params.require(:portfolio).permit( :name, :description, :initial_balance)
     end
 end
 
