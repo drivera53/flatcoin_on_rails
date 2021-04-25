@@ -1,0 +1,11 @@
+<h1> Edit </h1>
+
+<%= form_with(model: @portfolio) do |portf| %>
+   <%= portf.label :name %>
+    <%= portf.text_field :name %><br>
+    <%= portf.label :description %>
+    <%= portf.text_field :description %><br>
+    <%= portf.submit 'Update Portfolio' %>
+<% end %>
+
+<%= link_to "Delete Portfolio", portfolio_path(@portfolio), method: "delete" %>

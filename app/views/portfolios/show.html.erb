@@ -1,0 +1,7 @@
+<h1><%= @portfolio.name %></h1>
+<div>
+    <p> <%= @portfolio.description %></p>
+    <p> Balance inicial: $<%= @portfolio.balance %></p>
+</div>
+<%= link_to 'Back', portfolios_path %>
+<%= link_to 'Edit', edit_portfolio_path(@portfolio) %></li>

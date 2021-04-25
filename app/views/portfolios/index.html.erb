@@ -1,0 +1,12 @@
+<h1>Portfolios:</h1>
+<%= link_to 'New', new_portfolio_path(@portfolio) %></li>
+
+<ul>
+  <% @portfolio.each do |portf| %>
+    <li><%= link_to portf.name, portfolio_path(portf) %></li>
+    <li><%= portf.description %></li>
+    <li><%= portf.balance %></li>
+    <br>
+  <% end %>
+</ul>
+
