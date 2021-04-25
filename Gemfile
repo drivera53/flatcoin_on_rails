@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
+gem 'dotenv-rails'
+
+gem 'omniauth-rails_csrf_protection'
+gem 'omniauth'
+gem 'omniauth-github', github: 'omniauth/omniauth-github'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'

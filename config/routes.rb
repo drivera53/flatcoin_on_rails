@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'static#home'
+  match '/auth/:provider/callback', to: 'sessions#github_omniauth', via: [:get, :post]
   #resources :users
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'

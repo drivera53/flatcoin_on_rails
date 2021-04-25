@@ -3160,3 +3160,1169 @@ Processing by PortfoliosController#new as */*
 Completed 200 OK in 22ms (Views: 13.7ms | ActiveRecord: 1.0ms | Allocations: 10664)
 
 
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:02:59 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 311)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 15.8ms | Allocations: 6929)
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 14801)
+Completed 200 OK in 64ms (Views: 44.7ms | ActiveRecord: 0.9ms | Allocations: 17585)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2021-04-25 14:03:01 -0400
+Processing by SessionsController#logout as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 307)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-04-25 14:03:01 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 4450)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 883)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 9052)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.2ms | Allocations: 9957)
+
+
+Started GET "/auth/github" for 127.0.0.1 at 2021-04-25 14:03:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/auth/github"):
+  
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:07:22 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 297)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 7.4ms | Allocations: 2414)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 10665)
+Completed 200 OK in 50ms (Views: 34.1ms | ActiveRecord: 0.6ms | Allocations: 13317)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 14:07:25 -0400
+Started GET "/auth/github/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=79cbdb54b9f6d6dca09dad2a1176fa9900a0352b54ec6f9b" for ::1 at 2021-04-25 14:07:25 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (redirect_uri_mismatch | The redirect_uri MUST match the registered callback URL for this application. | https://docs.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch):
+  
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:544:in `fail!'
+omniauth-oauth2 (1.7.1) lib/omniauth/strategies/oauth2.rb:87:in `callback_phase'
+omniauth (2.0.4) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.1) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:07:59 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.5ms | Allocations: 970)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 4976)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.2ms | Allocations: 5453)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 14:08:03 -0400
+Started GET "/auth/github/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=b97ad146f06541b6eb018d9dc2146bd291af2a83a1a9cc12" for ::1 at 2021-04-25 14:08:03 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (redirect_uri_mismatch | The redirect_uri MUST match the registered callback URL for this application. | https://docs.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch):
+  
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:544:in `fail!'
+omniauth-oauth2 (1.7.1) lib/omniauth/strategies/oauth2.rb:87:in `callback_phase'
+omniauth (2.0.4) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.1) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:08:14 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 5.7ms | Allocations: 834)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 4692)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.2ms | Allocations: 5077)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 14:09:06 -0400
+Started GET "/auth/github/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=76faedc54be8eb1379dfab81f01f36a41983bc2e0a45edc2" for ::1 at 2021-04-25 14:09:06 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (redirect_uri_mismatch | The redirect_uri MUST match the registered callback URL for this application. | https://docs.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch):
+  
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:544:in `fail!'
+omniauth-oauth2 (1.7.1) lib/omniauth/strategies/oauth2.rb:87:in `callback_phase'
+omniauth (2.0.4) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.1) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:09:07 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.0ms | Allocations: 849)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 4709)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 5095)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:09:09 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 835)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4692)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.1ms | Allocations: 5076)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 14:09:11 -0400
+Started GET "/auth/github/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=4e64e5db3bbdc369bd187340fa50f254f91207a2507201bc" for ::1 at 2021-04-25 14:09:11 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (redirect_uri_mismatch | The redirect_uri MUST match the registered callback URL for this application. | https://docs.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch):
+  
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:544:in `fail!'
+omniauth-oauth2 (1.7.1) lib/omniauth/strategies/oauth2.rb:87:in `callback_phase'
+omniauth (2.0.4) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.1) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:09:13 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.1ms | Allocations: 848)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 4707)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.1ms | Allocations: 5093)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:11:55 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 312)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 7.5ms | Allocations: 2418)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 10656)
+Completed 200 OK in 50ms (Views: 33.0ms | ActiveRecord: 0.6ms | Allocations: 13283)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 14:11:57 -0400
+Started GET "/auth/github/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=ba1577a1f2b99aa3d49f225abf57646ba804277173292bf4" for ::1 at 2021-04-25 14:11:58 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (redirect_uri_mismatch | The redirect_uri MUST match the registered callback URL for this application. | https://docs.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch):
+  
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:544:in `fail!'
+omniauth-oauth2 (1.7.1) lib/omniauth/strategies/oauth2.rb:87:in `callback_phase'
+omniauth (2.0.4) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.1) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:13:52 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 657)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 7.8ms | Allocations: 2418)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 10685)
+Completed 200 OK in 56ms (Views: 39.1ms | ActiveRecord: 0.5ms | Allocations: 13315)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:13:54 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 56)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.7ms | Allocations: 855)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 4736)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.2ms | Allocations: 5122)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 14:13:55 -0400
+Started GET "/auth/github/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=05e8844e0a78b654f069669c49891ef45315be236ce69d40" for ::1 at 2021-04-25 14:13:55 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (redirect_uri_mismatch | The redirect_uri MUST match the registered callback URL for this application. | https://docs.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch):
+  
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:544:in `fail!'
+omniauth-oauth2 (1.7.1) lib/omniauth/strategies/oauth2.rb:87:in `callback_phase'
+omniauth (2.0.4) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.1) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:14:05 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 61)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.6ms | Allocations: 959)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 4982)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.2ms | Allocations: 5458)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:24:01 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1227)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 8.3ms | Allocations: 2413)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 10581)
+Completed 200 OK in 50ms (Views: 35.5ms | ActiveRecord: 0.6ms | Allocations: 13285)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 14:24:03 -0400
+Started GET "/auth/github/callback?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdocs.github.com%2Fapps%2Fmanaging-oauth-apps%2Ftroubleshooting-authorization-request-errors%2F%23redirect-uri-mismatch&state=0fb028685f8e1d54c924207fb3a32a0f6a3e369db2260b51" for ::1 at 2021-04-25 14:24:03 -0400
+  
+OmniAuth::Strategies::OAuth2::CallbackError (redirect_uri_mismatch | The redirect_uri MUST match the registered callback URL for this application. | https://docs.github.com/apps/managing-oauth-apps/troubleshooting-authorization-request-errors/#redirect-uri-mismatch):
+  
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:25:in `raise_out!'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:20:in `call'
+omniauth (2.0.4) lib/omniauth/failure_endpoint.rb:12:in `call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:544:in `fail!'
+omniauth-oauth2 (1.7.1) lib/omniauth/strategies/oauth2.rb:87:in `callback_phase'
+omniauth (2.0.4) lib/omniauth/strategy.rb:272:in `callback_call'
+omniauth (2.0.4) lib/omniauth/strategy.rb:194:in `call!'
+omniauth (2.0.4) lib/omniauth/strategy.rb:169:in `call'
+omniauth (2.0.4) lib/omniauth/builder.rb:45:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.3.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.3.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.3.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.3.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.3.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.1) lib/mini_profiler/profiler.rb:373:in `call'
+webpacker (5.2.1) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.1.3.1) lib/rails/engine.rb:539:in `call'
+puma (5.2.2) lib/puma/configuration.rb:248:in `call'
+puma (5.2.2) lib/puma/request.rb:76:in `block in handle_request'
+puma (5.2.2) lib/puma/thread_pool.rb:337:in `with_force_shutdown'
+puma (5.2.2) lib/puma/request.rb:75:in `handle_request'
+puma (5.2.2) lib/puma/server.rb:431:in `process_client'
+puma (5.2.2) lib/puma/thread_pool.rb:145:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:24:21 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 61)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.0ms | Allocations: 971)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 4978)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.1ms | Allocations: 5456)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:25:47 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 835)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 4693)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.2ms | Allocations: 5077)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 14:25:49 -0400
+Started GET "/auth/github/callback?code=3ba16b0de9a316e9f8a7&state=2a08439038a3d8445a26a849bbc673aa9f44d91a09801dc1" for 127.0.0.1 at 2021-04-25 14:25:49 -0400
+Processing by SessionsController#create_omniauth as HTML
+  Parameters: {"code"=>"3ba16b0de9a316e9f8a7", "state"=>"2a08439038a3d8445a26a849bbc673aa9f44d91a09801dc1", "provider"=>"github"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "61602179"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `create_omniauth'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms | Allocations: 6129)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 14:25:50 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 988)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 838)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 5647)
+Completed 200 OK in 33ms (Views: 28.4ms | ActiveRecord: 0.3ms | Allocations: 6885)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 14:36:00 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1455)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 6.3ms | Allocations: 2258)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 11328)
+Completed 200 OK in 57ms (Views: 36.0ms | ActiveRecord: 0.7ms | Allocations: 14671)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:36:04 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 852)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4780)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.2ms | Allocations: 5705)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 14:36:07 -0400
+Started GET "/auth/github/callback?code=4ca7fc2a438be4e62992&state=2a690f7a4d496841218ecaa4724f6f57f8ee6ef8d0f15a91" for 127.0.0.1 at 2021-04-25 14:36:07 -0400
+Processing by SessionsController#create_omniauth as HTML
+  Parameters: {"code"=>"4ca7fc2a438be4e62992", "state"=>"2a690f7a4d496841218ecaa4724f6f57f8ee6ef8d0f15a91", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "61602179"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `create_omniauth'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 11ms (ActiveRecord: 0.6ms | Allocations: 6152)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 14:36:08 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 838)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 5411)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.3ms | Allocations: 5805)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-04-25 14:36:16 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 4447)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 841)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 9005)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.2ms | Allocations: 9909)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-04-25 14:36:16 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.4ms | Allocations: 839)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 5017)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.2ms | Allocations: 5394)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-04-25 14:36:22 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dan", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 232ms (ActiveRecord: 0.3ms | Allocations: 1072)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 14:36:22 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 745)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.3ms | Allocations: 860)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 5426)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.5ms | Allocations: 5828)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2021-04-25 14:36:26 -0400
+Processing by SessionsController#logout as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 279)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-04-25 14:36:26 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 369)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.2ms | Allocations: 853)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 5040)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.1ms | Allocations: 5416)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 14:36:31 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 56)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.2ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4699)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.2ms | Allocations: 5080)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 14:36:33 -0400
+Started GET "/auth/github/callback?code=aa0706713f8bf7307f00&state=ab7ff0b64481153a8113b280ae7a7cfe2ea74d4d5dedbe7a" for 127.0.0.1 at 2021-04-25 14:36:33 -0400
+Processing by SessionsController#create_omniauth as HTML
+  Parameters: {"code"=>"aa0706713f8bf7307f00", "state"=>"ab7ff0b64481153a8113b280ae7a7cfe2ea74d4d5dedbe7a", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "61602179"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `create_omniauth'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1421)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 14:36:33 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 746)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 836)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 5399)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.4ms | Allocations: 5790)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2021-04-25 15:32:05 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 721)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 8.5ms | Allocations: 2421)
+  Rendered layout layouts/application.html.erb (Duration: 63.2ms | Allocations: 10600)
+Completed 200 OK in 84ms (Views: 67.3ms | ActiveRecord: 0.5ms | Allocations: 13197)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 15:32:07 -0400
+Started GET "/auth/github/callback?code=e1f75eecf54a41d417ea&state=79c2550c9e4980be640c3c98d073fc48a1b68b6e22c498a6" for 127.0.0.1 at 2021-04-25 15:32:07 -0400
+Processing by SessionsController#create_omniauth as HTML
+  Parameters: {"code"=>"e1f75eecf54a41d417ea", "state"=>"79c2550c9e4980be640c3c98d073fc48a1b68b6e22c498a6", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "61602179"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `create_omniauth'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 13ms (ActiveRecord: 0.7ms | Allocations: 6155)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 15:32:07 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 982)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 838)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 5642)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 0.3ms | Allocations: 6839)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "4553"], ["LIMIT", 1]]
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 15:37:14 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1153)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 8.6ms | Allocations: 2258)
+  Rendered layout layouts/application.html.erb (Duration: 36.3ms | Allocations: 11376)
+Completed 200 OK in 57ms (Views: 41.6ms | ActiveRecord: 0.9ms | Allocations: 14842)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 15:37:20 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.0ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 5413)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.4ms | Allocations: 5816)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 15:37:35 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 852)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 4781)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.1ms | Allocations: 5707)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-04-25 15:37:41 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 4408)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 855)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 8982)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.1ms | Allocations: 9893)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-04-25 15:37:43 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.7ms | Allocations: 839)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 5017)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.1ms | Allocations: 5396)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 15:37:49 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 56)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 853)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 4716)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.1ms | Allocations: 5096)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 15:37:50 -0400
+Started GET "/auth/github/callback?code=30d873c0fa47015bdb0c&state=35c80303c57f90e3b6ca606d7410f71c7fe8c96089be0cef" for 127.0.0.1 at 2021-04-25 15:37:50 -0400
+Processing by SessionsController#create_omniauth as HTML
+  Parameters: {"code"=>"30d873c0fa47015bdb0c", "state"=>"35c80303c57f90e3b6ca606d7410f71c7fe8c96089be0cef", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "61602179"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `create_omniauth'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:25:in `create_omniauth'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "uid", "provider", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Danny Rivera"], ["password_digest", "$2a$12$ITLSvobdjP3pFbMw1.DMi.dCmnYXdLZFo7jXxGijuqwvGw5niYnxy"], ["uid", "61602179"], ["provider", "github"], ["created_at", "2021-04-25 19:37:51.189351"], ["updated_at", "2021-04-25 19:37:51.189351"]]
+  ↳ app/controllers/sessions_controller.rb:25:in `create_omniauth'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:25:in `create_omniauth'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 255ms (ActiveRecord: 9.0ms | Allocations: 7883)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 15:37:51 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 748)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.4ms | Allocations: 876)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 5444)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.3ms | Allocations: 5838)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Destroy (1.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2021-04-25 15:41:02 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 56)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 6.8ms | Allocations: 2684)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 6520)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.8ms | Allocations: 6993)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 15:41:04 -0400
+Started GET "/" for 127.0.0.1 at 2021-04-25 15:41:15 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.7ms | Allocations: 835)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4692)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.2ms | Allocations: 5078)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2021-04-25 15:44:44 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 56)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 5.9ms | Allocations: 2685)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 6506)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.6ms | Allocations: 7038)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-25 15:44:45 -0400
+Started GET "/auth/github/callback?code=e6e5cb4ecfca11af2e0e&state=d213db1711ecea65fb41f1c92ccd660c41f51b28e296e75e" for 127.0.0.1 at 2021-04-25 15:45:32 -0400
+Processing by SessionsController#github_omniauth as HTML
+  Parameters: {"code"=>"e6e5cb4ecfca11af2e0e", "state"=>"d213db1711ecea65fb41f1c92ccd660c41f51b28e296e75e", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "61602179"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `github_omniauth'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:25:in `github_omniauth'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "uid", "provider", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Danny Rivera"], ["password_digest", "$2a$12$oP3KXUwkqrgT1EcYWzjwPuNwjTi4Oz1s4vy.HGHGx0UEczM0e9wAm"], ["uid", "61602179"], ["provider", "github"], ["created_at", "2021-04-25 19:45:33.372644"], ["updated_at", "2021-04-25 19:45:33.372644"]]
+  ↳ app/controllers/sessions_controller.rb:25:in `github_omniauth'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:25:in `github_omniauth'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 244ms (ActiveRecord: 3.8ms | Allocations: 7007)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 15:45:33 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 771)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.7ms | Allocations: 870)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 5461)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.5ms | Allocations: 6268)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-25 15:45:40 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 5303)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms | Allocations: 5697)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fb5b35f3e10%3E" for 127.0.0.1 at 2021-04-25 15:45:44 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1174)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 73)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 5202)
+Completed 200 OK in 17ms (Views: 9.2ms | ActiveRecord: 0.6ms | Allocations: 10781)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2021-04-25 15:45:49 -0400
+Processing by SessionsController#logout as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-04-25 15:45:49 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 374)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 841)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 5032)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.1ms | Allocations: 5546)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 15:45:58 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 56)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 837)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 4698)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.1ms | Allocations: 5077)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-25 15:45:58 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.1ms | Allocations: 835)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 4692)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.5ms | Allocations: 5070)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2021-04-25 15:46:21 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 835)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 4692)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.1ms | Allocations: 5072)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
