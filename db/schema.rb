@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2021_04_26_174620) do
     t.text "description"
     t.integer "current_balance"
     t.integer "initial_balance"
-    t.integer "likes", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"

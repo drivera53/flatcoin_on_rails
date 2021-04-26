@@ -7038,3 +7038,1389 @@ Processing by PortfoliosController#create as HTML
 Completed 200 OK in 28ms (Views: 23.0ms | ActiveRecord: 0.3ms | Allocations: 6254)
 
 
+Started GET "/pfadsf" for 127.0.0.1 at 2021-04-26 15:32:40 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/pfadsf"):
+  
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "portfolios" INNER JOIN "comments" ON "portfolios"."id" = "comments"."portfolio_id" WHERE "comments"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" INNER JOIN "comments" ON "portfolios"."id" = "comments"."portfolio_id" WHERE "comments"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" INNER JOIN "comments" ON "portfolios"."id" = "comments"."portfolio_id" WHERE "comments"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" INNER JOIN "comments" ON "portfolios"."id" = "comments"."portfolio_id" WHERE "comments"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" INNER JOIN "comments" ON "portfolios"."id" = "comments"."portfolio_id" WHERE "comments"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."user_id" = ?[0m  [["user_id", 2]]
+Started GET "/" for 127.0.0.1 at 2021-04-26 15:40:19 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 267)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 15.8ms | Allocations: 9065)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 17720)
+Completed 200 OK in 54ms (Views: 39.9ms | ActiveRecord: 0.7ms | Allocations: 20395)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-26 15:40:19 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.3ms | Allocations: 752)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 4654)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.3ms | Allocations: 5034)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 15:40:24 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 999)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 748)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 5628)
+Completed 200 OK in 52ms (Views: 16.6ms | ActiveRecord: 0.3ms | Allocations: 8506)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 15:40:25 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 5372)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 5773)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fa27e5bd538%3E" for 127.0.0.1 at 2021-04-26 15:40:27 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 4963)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 73)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 8950)
+Completed 200 OK in 32ms (Views: 18.5ms | ActiveRecord: 1.3ms | Allocations: 15099)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 15:40:35 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"name"=>"Portafolio", "description"=>"fgsdfsa", "initial_balance"=>"73483"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 768)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 4631)
+Completed 200 OK in 26ms (Views: 14.5ms | ActiveRecord: 0.3ms | Allocations: 7703)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 15:40:38 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"name"=>"Portafolio", "description"=>"fgsdfsa", "initial_balance"=>"73483"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 764)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 4627)
+Completed 200 OK in 24ms (Views: 16.1ms | ActiveRecord: 0.2ms | Allocations: 6238)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 15:40:40 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 744)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 744)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 5363)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.3ms | Allocations: 5755)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 15:40:44 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 744)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 5360)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.4ms | Allocations: 5754)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 2], ["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePortfolios (20210425105055)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "portfolios" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "current_balance" integer, "initial_balance" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210425105055"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20210425150356)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "password_digest" varchar, "email" varchar, "uid" varchar, "provider" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210425150356"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateComments (20210426172741)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "portfolio_id" integer, "content" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210426172741"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUserIdToPortfolios (20210426174620)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "portfolios" ADD "user_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210426174620"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-26 19:46:17.022072"], ["updated_at", "2021-04-26 19:46:17.022072"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 15:50:01 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1179)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 10.2ms | Allocations: 4142)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 13679)
+Completed 200 OK in 58ms (Views: 37.3ms | ActiveRecord: 0.9ms | Allocations: 19259)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 15:50:02 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 751)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 769)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 5400)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.3ms | Allocations: 5802)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fc9175b5d50%3E" for 127.0.0.1 at 2021-04-26 15:50:03 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :redirect_if_not_logged_in rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 857)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-04-26 15:50:03 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4448)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.7ms | Allocations: 774)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 9000)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.1ms | Allocations: 9953)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-26 15:50:05 -0400
+Started GET "/auth/github/callback?code=8d5b992fc7b8d63abf18&state=9555669ece05e4ff65e7fbc9f7ccc84e714488e9d7b3ccac" for 127.0.0.1 at 2021-04-26 15:50:05 -0400
+Processing by SessionsController#github_omniauth as HTML
+  Parameters: {"code"=>"8d5b992fc7b8d63abf18", "state"=>"9555669ece05e4ff65e7fbc9f7ccc84e714488e9d7b3ccac", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "61602179"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `github_omniauth'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/sessions_controller.rb:25:in `github_omniauth'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "uid", "provider", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Danny Rivera"], ["password_digest", "$2a$12$yCl0TnDmMlKfK1hKHHC.IO9pvzdznqeXMsM082BJxxBZJlj5Zpg0e"], ["uid", "61602179"], ["provider", "github"], ["created_at", "2021-04-26 19:50:06.618529"], ["updated_at", "2021-04-26 19:50:06.618529"]]
+  ↳ app/controllers/sessions_controller.rb:25:in `github_omniauth'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/sessions_controller.rb:25:in `github_omniauth'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 245ms (ActiveRecord: 7.6ms | Allocations: 7751)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 15:50:06 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.4ms | Allocations: 760)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 5385)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.4ms | Allocations: 5787)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fc912d57bd0%3E" for 127.0.0.1 at 2021-04-26 15:50:07 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1160)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 73)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 5247)
+Completed 200 OK in 36ms (Views: 18.2ms | ActiveRecord: 0.9ms | Allocations: 10798)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 15:50:15 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"name"=>"Portafolio", "description"=>"fdasfas", "initial_balance"=>"35533"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/edit.html.erb within layouts/application
+  Rendered portfolios/edit.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2060)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2130)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms | Allocations: 5135)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"portfolios", :id=>nil}, missing required keys: [:id]):
+     8:     <%= portf.submit 'Update Portfolio' %>
+     9: <% end %>
+    10: 
+    11: <%= link_to "Delete Portfolio", portfolio_path(@portfolio), method: "delete" %>
+  
+app/views/portfolios/edit.html.erb:11
+app/controllers/portfolios_controller.rb:18:in `create'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/" for 127.0.0.1 at 2021-04-26 16:02:01 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 255)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 18.1ms | Allocations: 9066)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 17732)
+Completed 200 OK in 59ms (Views: 47.3ms | ActiveRecord: 0.8ms | Allocations: 20599)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:02:04 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 749)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 5623)
+Completed 200 OK in 22ms (Views: 16.1ms | ActiveRecord: 0.3ms | Allocations: 8497)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:02:04 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 743)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 5364)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.3ms | Allocations: 5759)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fe72ea987e8%3E" for 127.0.0.1 at 2021-04-26 16:02:05 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 4968)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 73)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 8955)
+Completed 200 OK in 30ms (Views: 18.0ms | ActiveRecord: 1.1ms | Allocations: 14548)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:02:17 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.8ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 5363)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.4ms | Allocations: 5756)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fe73085ebb0%3E" for 127.0.0.1 at 2021-04-26 16:02:18 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 4696)
+Completed 200 OK in 22ms (Views: 17.7ms | ActiveRecord: 0.2ms | Allocations: 5692)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:02:25 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"name"=>"This ", "description"=>"iS. ", "initial_balance"=>"36262"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 770)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 4633)
+Completed 200 OK in 33ms (Views: 20.8ms | ActiveRecord: 0.2ms | Allocations: 7705)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:04:29 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 947)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.7ms | Allocations: 1012)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 6195)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 0.4ms | Allocations: 7346)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fe72fae0600%3E" for 127.0.0.1 at 2021-04-26 16:04:30 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 989)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 73)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 5074)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.2ms | Allocations: 6225)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fe72fae0600%3E" for 127.0.0.1 at 2021-04-26 16:04:40 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.5ms | Allocations: 229)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1447)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 6047)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 7811)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:04:45 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"name"=>"fdasf", "description"=>"fdsaf", "initial_balance"=>"fsdfa"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 1.4ms | Allocations: 554)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1486)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 5451)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 0.2ms | Allocations: 7163)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-26 16:04:53 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 120)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.7ms | Allocations: 762)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 4747)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.2ms | Allocations: 5631)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2021-04-26 16:05:09 -0400
+Processing by SessionsController#logout as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 295)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-04-26 16:05:09 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 655)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 935)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 5465)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.2ms | Allocations: 6362)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-04-26 16:05:16 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"dan", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 361)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 902)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 5127)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 6254)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-04-26 16:05:21 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"den", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "den"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 361)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 902)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 5127)
+Completed 200 OK in 19ms (Views: 15.2ms | ActiveRecord: 0.3ms | Allocations: 6095)
+
+
+Started POST "/login" for 127.0.0.1 at 2021-04-26 16:05:25 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"din", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "din"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 361)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.8ms | Allocations: 902)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 5127)
+Completed 200 OK in 21ms (Views: 16.3ms | ActiveRecord: 0.3ms | Allocations: 6095)
+
+
+Started GET "/signup" for 127.0.0.1 at 2021-04-26 16:05:32 -0400
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered users/new.html.erb within layouts/application (Duration: 18.7ms | Allocations: 1196)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 5148)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.0ms | Allocations: 6080)
+
+
+Started POST "/signup" for 127.0.0.1 at 2021-04-26 16:05:38 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Dan", "email"=>"dan", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "password_digest", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Dan"], ["password_digest", "$2a$12$S3makxG9lS/SD7xmn9XWZ.ocHIquJqWP05gQj3IVPXPV/cQeZOMdK"], ["email", "dan"], ["created_at", "2021-04-26 20:05:38.663427"], ["updated_at", "2021-04-26 20:05:38.663427"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 240ms (ActiveRecord: 4.0ms | Allocations: 2778)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:05:38 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 936)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.8ms | Allocations: 748)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 5563)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.2ms | Allocations: 6093)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fe72eaddbe0%3E" for 127.0.0.1 at 2021-04-26 16:05:43 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 854)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 4797)
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 0.2ms | Allocations: 5777)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:05:49 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"name"=>"dad", "description"=>"fad", "initial_balance"=>"432"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 1.0ms | Allocations: 457)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1281)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 5143)
+Completed 200 OK in 19ms (Views: 13.2ms | ActiveRecord: 0.2ms | Allocations: 6747)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:11:10 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1660)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.0ms | Allocations: 1036)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 6930)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.9ms | Allocations: 8070)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fe730684330%3E" for 127.0.0.1 at 2021-04-26 16:11:11 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.6ms | Allocations: 223)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 29.4ms | Allocations: 6304)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 6374)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.3ms | Allocations: 7509)
+
+
+  
+ActionView::Template::Error (undefined method `portfolio_user_path' for #<ActionView::Base:0x007fe72ec14040>
+Did you mean?  portfolio_path
+               portfolios_path):
+    1: <%= render partial: 'errors/errors', locals: {model: @portfolio} %>
+    2: <%= form_with(model: [@portfolio, @user]) do |f| %>
+    3:   <%= f.label :name %><br>
+    4:   <%= f.text_field :name %></div>
+    5:   <%= f.label :description %>
+  
+app/views/portfolios/new.html.erb:2
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fe730684330%3E" for 127.0.0.1 at 2021-04-26 16:11:41 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1103)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 5835)
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 0.3ms | Allocations: 7771)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fe730684330%3E" for 127.0.0.1 at 2021-04-26 16:11:48 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.5ms | Allocations: 222)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1439)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 6039)
+Completed 200 OK in 22ms (Views: 16.8ms | ActiveRecord: 0.2ms | Allocations: 7807)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:11:52 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"name"=>"fadf", "description"=>"dfad", "initial_balance"=>"dfasf"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 1.2ms | Allocations: 458)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1394)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 5360)
+Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 0.3ms | Allocations: 7120)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:12:46 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 965)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1011)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 6208)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.2ms | Allocations: 7353)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fe7305feff0%3E" for 127.0.0.1 at 2021-04-26 16:12:47 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.5ms | Allocations: 222)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 3964)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 7948)
+Completed 200 OK in 26ms (Views: 22.2ms | ActiveRecord: 0.2ms | Allocations: 9099)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:12:54 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"2", "name"=>"Portafolio", "description"=>"Prueba de description", "initial_balance"=>"6235242"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+[31mUnpermitted parameter: :user_id[0m
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 1.2ms | Allocations: 457)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1415)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 5277)
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 0.2ms | Allocations: 7018)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:15:33 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 933)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1010)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 6176)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.3ms | Allocations: 7316)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fe72fdcdfc0%3E" for 127.0.0.1 at 2021-04-26 16:15:34 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.9ms | Allocations: 222)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 5579)
+Completed 200 OK in 23ms (Views: 18.1ms | ActiveRecord: 0.1ms | Allocations: 6728)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:15:39 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"2", "name"=>"dfad", "description"=>"fadsf", "initial_balance"=>"342"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+[31mUnpermitted parameter: :user_id[0m
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 1.4ms | Allocations: 457)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1425)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 5288)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 7027)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-26 16:21:11 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 240)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 18.0ms | Allocations: 9065)
+  Rendered layout layouts/application.html.erb (Duration: 38.0ms | Allocations: 16668)
+Completed 200 OK in 60ms (Views: 40.3ms | ActiveRecord: 1.2ms | Allocations: 19194)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:21:17 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.5ms | Allocations: 748)
+  Rendered layout layouts/application.html.erb (Duration: 43.3ms | Allocations: 5619)
+Completed 200 OK in 53ms (Views: 45.2ms | ActiveRecord: 0.5ms | Allocations: 8494)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007f9b99f24338%3E" for 127.0.0.1 at 2021-04-26 16:21:19 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.7ms | Allocations: 230)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 5487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 9473)
+Completed 200 OK in 41ms (Views: 19.4ms | ActiveRecord: 1.1ms | Allocations: 20152)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:21:23 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"2", "name"=>"fa", "description"=>"dfa", "initial_balance"=>"324"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+[31mUnpermitted parameter: :user_id[0m
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 2.6ms | Allocations: 554)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1526)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 5390)
+Completed 200 OK in 33ms (Views: 22.1ms | ActiveRecord: 0.2ms | Allocations: 8088)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:22:42 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"2", "name"=>"fa", "description"=>"dfa", "initial_balance"=>"324"}, "commit"=>"Create New Portfolio"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+[31mUnpermitted parameter: :user_id[0m
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 1.1ms | Allocations: 505)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1387)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 5254)
+Completed 200 OK in 38ms (Views: 11.6ms | ActiveRecord: 1.9ms | Allocations: 20712)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:23:10 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"2", "name"=>"fa", "description"=>"dfa", "initial_balance"=>"324"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+[31mUnpermitted parameter: :user_id[0m
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 1.6ms | Allocations: 457)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1322)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 5185)
+Completed 200 OK in 19ms (Views: 13.6ms | ActiveRecord: 0.4ms | Allocations: 6822)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-26 16:32:09 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 120)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 15.2ms | Allocations: 7960)
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | Allocations: 12259)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.5ms | Allocations: 13308)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-26 16:32:11 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.2ms | Allocations: 752)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 4654)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.3ms | Allocations: 5036)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-26 16:32:17 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 752)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4651)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.2ms | Allocations: 5030)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:32:20 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 963)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 748)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 5591)
+Completed 200 OK in 24ms (Views: 18.0ms | ActiveRecord: 0.4ms | Allocations: 8130)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007f9b9c55bc18%3E" for 127.0.0.1 at 2021-04-26 16:32:21 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.9ms | Allocations: 222)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1554)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 5639)
+Completed 200 OK in 29ms (Views: 17.5ms | ActiveRecord: 0.2ms | Allocations: 10583)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:32:26 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"2", "name"=>"fdsafasd", "description"=>"fasdfa", "initial_balance"=>"dfadsf"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+[31mUnpermitted parameter: :user_id[0m
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 2.8ms | Allocations: 457)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1428)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 69)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 5290)
+Completed 200 OK in 24ms (Views: 17.8ms | ActiveRecord: 0.3ms | Allocations: 7585)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-26 16:40:13 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 254)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 18.3ms | Allocations: 9065)
+  Rendered layout layouts/application.html.erb (Duration: 40.9ms | Allocations: 17676)
+Completed 200 OK in 59ms (Views: 44.5ms | ActiveRecord: 0.8ms | Allocations: 20270)
+
+
+Started GET "/" for 127.0.0.1 at 2021-04-26 16:40:15 -0400
+Processing by StaticController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static/home.html.erb within layouts/application
+  Rendered static/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 23.9ms | Allocations: 766)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 4670)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.2ms | Allocations: 5054)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:40:21 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 996)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 748)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 5625)
+Completed 200 OK in 27ms (Views: 19.4ms | ActiveRecord: 0.4ms | Allocations: 8500)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fa347180780%3E" for 127.0.0.1 at 2021-04-26 16:40:22 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.8ms | Allocations: 230)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 18.6ms | Allocations: 5547)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 9533)
+Completed 200 OK in 40ms (Views: 28.5ms | ActiveRecord: 0.9ms | Allocations: 15126)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:40:26 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"2", "name"=>"fadf", "description"=>"fdas", "initial_balance"=>"433"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms | Allocations: 3150)
+
+
+  
+NameError (undefined local variable or method `user_id' for #<PortfoliosController:0x007fa347192d90>
+Did you mean?  @user):
+  
+app/controllers/portfolios_controller.rb:57:in `portfolio_params'
+app/controllers/portfolios_controller.rb:14:in `create'
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:40:42 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"2", "name"=>"fadf", "description"=>"fdas", "initial_balance"=>"433"}, "commit"=>"Create New Portfolio"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mPortfolio Create (0.7ms)[0m  [1m[32mINSERT INTO "portfolios" ("name", "description", "initial_balance", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "fadf"], ["description", "fdas"], ["initial_balance", 433], ["created_at", "2021-04-26 20:40:42.981954"], ["updated_at", "2021-04-26 20:40:42.981954"], ["user_id", 2]]
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 48ms (ActiveRecord: 4.3ms | Allocations: 19559)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:40:43 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 831)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.7ms | Allocations: 750)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 5584)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.3ms | Allocations: 6178)
+
+
+Started GET "/portfolios/1" for 127.0.0.1 at 2021-04-26 16:40:52 -0400
+Processing by PortfoliosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" WHERE "portfolios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:24:in `show'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/show.html.erb within layouts/application
+  Rendered portfolios/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1111)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 4994)
+Completed 200 OK in 48ms (Views: 14.5ms | ActiveRecord: 1.0ms | Allocations: 12418)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:42:09 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 5.2ms | Allocations: 1010)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 6215)
+Completed 200 OK in 42ms (Views: 39.4ms | ActiveRecord: 0.7ms | Allocations: 7358)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fa34834f628%3E" for 127.0.0.1 at 2021-04-26 16:42:10 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.6ms | Allocations: 222)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1520)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 5604)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 6755)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:42:17 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"2", "name"=>"didfjaklfjasdlk,", "description"=>"dfadf", "initial_balance"=>"34222"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mPortfolio Create (0.6ms)[0m  [1m[32mINSERT INTO "portfolios" ("name", "description", "initial_balance", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "didfjaklfjasdlk,"], ["description", "dfadf"], ["initial_balance", 34222], ["created_at", "2021-04-26 20:42:17.025345"], ["updated_at", "2021-04-26 20:42:17.025345"], ["user_id", 2]]
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 18ms (ActiveRecord: 2.2ms | Allocations: 3893)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:42:17 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 744)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 5434)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.4ms | Allocations: 5827)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:43:00 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1010)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.8ms | Allocations: 1010)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 6254)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.4ms | Allocations: 7396)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fa3467a66d8%3E" for 127.0.0.1 at 2021-04-26 16:43:01 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 0.9ms | Allocations: 222)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 5570)
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 6720)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:43:09 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"2", "name"=>"Nuevo", "description"=>"daes", "initial_balance"=>"233523"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mPortfolio Create (0.9ms)[0m  [1m[32mINSERT INTO "portfolios" ("name", "description", "initial_balance", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Nuevo"], ["description", "daes"], ["initial_balance", 233523], ["created_at", "2021-04-26 20:43:09.590150"], ["updated_at", "2021-04-26 20:43:09.590150"], ["user_id", 2]]
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 18ms (ActiveRecord: 2.3ms | Allocations: 3897)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:43:09 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 851)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 744)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 5470)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.5ms | Allocations: 5863)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.1ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" INNER JOIN "comments" ON "portfolios"."id" = "comments"."portfolio_id" WHERE "comments"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" INNER JOIN "comments" ON "portfolios"."id" = "comments"."portfolio_id" WHERE "comments"."user_id" = ? /* loading for inspect */ LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "portfolios" INNER JOIN "comments" ON "portfolios"."id" = "comments"."portfolio_id" WHERE "comments"."user_id" = ?[0m  [["user_id", 1]]
+Started DELETE "/logout" for 127.0.0.1 at 2021-04-26 16:44:32 -0400
+Processing by SessionsController#logout as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+Started GET "/login" for 127.0.0.1 at 2021-04-26 16:44:32 -0400
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.1ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 6086)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.3ms | Allocations: 7209)
+
+
+Started POST "/auth/github" for 127.0.0.1 at 2021-04-26 16:44:36 -0400
+Started GET "/auth/github/callback?code=34fd539c80a49a058f81&state=c30f880715124a850419da03137891c98e91ee10235d261a" for 127.0.0.1 at 2021-04-26 16:44:37 -0400
+Processing by SessionsController#github_omniauth as HTML
+  Parameters: {"code"=>"34fd539c80a49a058f81", "state"=>"c30f880715124a850419da03137891c98e91ee10235d261a", "provider"=>"github"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "61602179"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:25:in `github_omniauth'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 972)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:44:37 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1041)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 748)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 5667)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.3ms | Allocations: 6597)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fa34bb9afc8%3E" for 127.0.0.1 at 2021-04-26 16:44:40 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 1.1ms | Allocations: 222)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1480)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 5563)
+Completed 200 OK in 20ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 6714)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:44:46 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"1", "name"=>"HISDFA", "description"=>"GIT", "initial_balance"=>"FADF"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mPortfolio Create (0.5ms)[0m  [1m[32mINSERT INTO "portfolios" ("name", "description", "initial_balance", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "HISDFA"], ["description", "GIT"], ["initial_balance", 0], ["created_at", "2021-04-26 20:44:46.252275"], ["updated_at", "2021-04-26 20:44:46.252275"], ["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 19ms (ActiveRecord: 2.3ms | Allocations: 3898)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:44:46 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 889)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 745)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 5510)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.3ms | Allocations: 5905)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "portfolios" INNER JOIN "comments" ON "portfolios"."id" = "comments"."portfolio_id" WHERE "comments"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios" ORDER BY "portfolios"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:47:09 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.2ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/portfolios/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/portfolios/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/portfolios/index.html.erb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/portfolios/index.html.erb:9
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 21.7ms | Allocations: 4107)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.5ms | Allocations: 964)
+  Rendered layout layouts/application.html.erb (Duration: 51.1ms | Allocations: 9304)
+Completed 200 OK in 55ms (Views: 52.5ms | ActiveRecord: 0.8ms | Allocations: 10444)
+
+
+Started GET "/portfolios/new.%23%3CPortfolio::ActiveRecord_Relation:0x00007fa34bae7298%3E" for 127.0.0.1 at 2021-04-26 16:47:23 -0400
+Processing by PortfoliosController#new as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/new.html.erb within layouts/application
+  Rendered errors/_errors.html.erb (Duration: 1.2ms | Allocations: 222)
+  Rendered portfolios/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1480)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 5563)
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.3ms | Allocations: 6714)
+
+
+Started POST "/portfolios" for 127.0.0.1 at 2021-04-26 16:47:31 -0400
+Processing by PortfoliosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "portfolio"=>{"user_id"=>"1", "name"=>"Another", "description"=>"darezsd8237262", "initial_balance"=>"32434"}, "commit"=>"Create New Portfolio"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mPortfolio Create (0.8ms)[0m  [1m[32mINSERT INTO "portfolios" ("name", "description", "initial_balance", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Another"], ["description", "darezsd8237262"], ["initial_balance", 32434], ["created_at", "2021-04-26 20:47:31.685143"], ["updated_at", "2021-04-26 20:47:31.685143"], ["user_id", 1]]
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/portfolios_controller.rb:16:in `create'
+Redirected to http://127.0.0.1:3000/portfolios
+Completed 302 Found in 20ms (ActiveRecord: 2.6ms | Allocations: 3895)
+
+
+Started GET "/portfolios" for 127.0.0.1 at 2021-04-26 16:47:31 -0400
+Processing by PortfoliosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering portfolios/index.html.erb within layouts/application
+  [1m[36mPortfolio Load (0.3ms)[0m  [1m[34mSELECT "portfolios".* FROM "portfolios"[0m
+  ↳ app/views/portfolios/index.html.erb:5
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/portfolios/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/portfolios/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/portfolios/index.html.erb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/portfolios/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/portfolios/index.html.erb:9
+  Rendered portfolios/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 4662)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:3:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 698)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | Allocations: 9236)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.8ms | Allocations: 9630)
+
+

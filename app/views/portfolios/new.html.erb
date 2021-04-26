@@ -1,10 +1,11 @@
-<%= form_with(model: [@portfolio]) do |f| %>
-      <%= f.label :name %><br>
-      <%= f.text_field :name %></div>
-      <%= f.label :description %>
-      <%= f.text_field :description %><br>
-      <%= f.label :initial_balance %>
-      <%= f.text_field :initial_balance %><br>  
-      <%= f.submit 'Create New Portfolio' %>
-    </div>
+<%= render partial: 'errors/errors', locals: {model: @portfolio} %>
+<%= form_for(@portfolio) do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+  <%= f.label :initial_balance %>
+  <%= f.text_field :initial_balance %><br>  
+  <%= f.submit 'Create New Portfolio' %>
 <% end %>

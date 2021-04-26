@@ -5,7 +5,6 @@ class CreatePortfolios < ActiveRecord::Migration[6.1]
       t.text :description
       t.integer :current_balance
       t.integer :initial_balance
-      t.integer :likes, default: 0
 
       t.timestamps
     end
