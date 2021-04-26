@@ -5,3 +5,10 @@
 </div>
 <%= link_to 'Back', portfolios_path %>
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %></li>
+
+<%= form_with(model: [@portfolio, @comment]) do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :portfolio_id, value: @portfolio.id %>
+    <%= f.text_area :content %>
+    <%= f.submit :comment %>
+<% end %>

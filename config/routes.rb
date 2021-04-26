@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root 'static#home'
   match '/auth/:provider/callback', to: 'sessions#github_omniauth', via: [:get, :post]
   #resources :users
@@ -10,6 +11,8 @@ Rails.application.routes.draw do
 
   delete '/logout', to: "sessions#logout"
 
-  resources :portfolios
+  resources :portfolios do
+    resources :comments, only: [:create]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
