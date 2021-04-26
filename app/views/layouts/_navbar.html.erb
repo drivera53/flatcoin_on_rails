@@ -10,6 +10,12 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <% if logged_in? %>
                     <li class="nav-item"> 
+                    <a <%= link_to 'My Portfolios', my_portfolios_path, class: 'nav-link' %></a>
+                    </li>
+                    <li class="nav-item"> 
+                    <a <%= link_to 'Explore Portfolios', portfolios_path, class: 'nav-link' %></a>
+                    </li>
+                    <li class="nav-item"> 
                     <a <%= link_to 'Logout', logout_path, class: 'nav-link', method: 'delete' %></a>
                     </li>
                 <% else %>

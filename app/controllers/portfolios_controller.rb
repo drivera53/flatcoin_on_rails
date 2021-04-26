@@ -2,7 +2,10 @@ class PortfoliosController < ApplicationController
     before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
 
     def index
-        @portfolio = Portfolio.all
+        @portfolio = Portfolio.all   
+    end
+
+    def my_portfolios    
     end
 
     def new
@@ -23,7 +26,7 @@ class PortfoliosController < ApplicationController
     def show
         @portfolio = Portfolio.find_by(id: params[:id])
         @comments = @portfolio.comments
-        @comment = @portfolio.comments.build(user_id: current_user.id)
+        @comment = Comment.new
         #@ride = @attraction.rides.build(user_id: current_user.id)
     end
 

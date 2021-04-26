@@ -12,3 +12,9 @@
     <%= f.text_area :content %>
     <%= f.submit :comment %>
 <% end %>
+
+<% @comments.each do |comment| %>
+    <li>
+        <%= comment.user.name %> - <%= comment.content %>
+    </li>
+<% end %>
