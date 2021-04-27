@@ -30,7 +30,8 @@ class PortfoliosController < ApplicationController
         @comment = Comment.new
         @trades = @portfolio.trades
         @trade = Trade.new
-        #@ride = @attraction.rides.build(user_id: current_user.id)
+        Api.new.get_top_20_cryptocurrencies
+        @cryptocurrencies = Cryptocurrency.all
     end
 
     def edit

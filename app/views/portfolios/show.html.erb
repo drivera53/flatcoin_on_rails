@@ -2,11 +2,46 @@
 <div>
     <p> Created by: <%= @portfolio_creator.name %></p>
     <p> <%= @portfolio.description %></p>
+    <p> Portfolio ID: <%= @portfolio.id %></p>
     <p> Balance inicial: $<%= @portfolio.initial_balance %></p>
 </div>
 <%= link_to 'Back', portfolios_path %>
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %></li>
 
+<h1>Form_tag</h1>
+<%= form_tag('/session', method: :post) do %>
+
+    <div class="form-group">
+      <%= label_tag(:name, "Your name:") %>
+      <%= collection_select(:cryptocurrency, :name, Cryptocurrency.all, :name, :name, prompt: "Please select your username from this dropdown") %>
+    </div>
+  
+    <div class="form-group">
+      <%= label_tag(:password, "Your password:") %>
+      <%= password_field_tag(:password, nil, class: "form-control") %>
+    </div>
+  
+    <div class="actions">
+      <%= submit_tag("Sign In") %>
+    </div>
+  
+<% end %>
+<h1>Form action</h1>
+<div>
+    <form action='/portfolios/<%= @portfolio.id %>/trades/new' method="post">
+    <input name="authenticity_token" type="hidden" value="f755bb0ed134b76c432144748a6d4b7a7ddf2b71" />
+    <label for="coin_id">Choose a Cryptocurrency to get started:</label>
+    <br>
+    <select name="coin_id" id="coin_id">
+    <% @cryptocurrencies.each do |cryptocurrency| %>
+        <option value="<%= cryptocurrency.id %>"><%= cryptocurrency.name %> $<%= cryptocurrency.current_price %></option>
+    <% end %>
+    </select>
+    <input type="submit" name="submit" id="submit" value="Trade">
+    </form>
+</div>
+
+<h1>Form_with create trade</h1>
 <% if @portfolio.user_id == current_user.id %>
     <%= form_with(model: [@portfolio, @trade]) do |f| %>
         <%= f.hidden_field :user_id, value: current_user.id %>

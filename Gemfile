@@ -8,6 +8,10 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth'
 gem 'omniauth-github', github: 'omniauth/omniauth-github'
 
+gem 'net-http'
+gem 'open-uri'
+gem 'json'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 # Use sqlite3 as the database for Active Record

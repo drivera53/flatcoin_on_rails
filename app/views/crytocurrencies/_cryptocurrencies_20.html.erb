@@ -1,0 +1,15 @@
+<h2>Top 20 Cryptocurrency Prices by Market Cap</h2>
+<table class="table table-bordered border-primary">
+    <tr>
+        <th>#</th>
+        <th>Coin</th>
+        <th>Price</th>
+    </tr>
+    <% @cryptocurrencies.each.with_index(1) do |cryptocurrency, index| %>
+        <tr>
+        <td><%= index %></td>
+        <td><%= cryptocurrency.name %></td>
+        <td><%= cryptocurrency.current_price %> FlatCoins</td>
+        </tr>
+    <% end %>
+</table>

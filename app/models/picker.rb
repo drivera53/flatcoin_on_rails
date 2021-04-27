@@ -1,0 +1,2 @@
+class Picker < ApplicationRecord
+end

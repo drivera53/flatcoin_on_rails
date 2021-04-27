@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_26_215411) do
+ActiveRecord::Schema.define(version: 2021_04_27_195501) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "portfolio_id"
     t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pickers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
