@@ -4,6 +4,7 @@ class Portfolio < ApplicationRecord
     has_many :comments
     has_many :users, through: :comments
 
+    has_many :trades
 
     # You must include at least one class level ActiveRecord scope method
     scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%") }

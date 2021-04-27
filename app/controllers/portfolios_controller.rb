@@ -25,8 +25,11 @@ class PortfoliosController < ApplicationController
 
     def show
         @portfolio = Portfolio.find_by(id: params[:id])
+        @portfolio_creator = User.find_by(id: @portfolio.user_id)
         @comments = @portfolio.comments
         @comment = Comment.new
+        @trades = @portfolio.trades
+        @trade = Trade.new
         #@ride = @attraction.rides.build(user_id: current_user.id)
     end
 

@@ -11,9 +11,12 @@ Rails.application.routes.draw do
 
   delete '/logout', to: "sessions#logout"
 
+  get '/my_portfolios', to: 'portfolios#my_portfolios'
+
   resources :portfolios do
     resources :comments, only: [:create]
+    resources :trades, only: [:create]
   end
-  get '/my_portfolios', to: 'portfolios#my_portfolios'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

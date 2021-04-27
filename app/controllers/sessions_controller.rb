@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
         if @user && @user.authenticate(params[:user][:password])
             flash[:message] = "Succesful sign in"
             session[:user_id] = @user.id
-            redirect_to portfolios_path
+            redirect_to root_path
         else
             flash[:message] = "Invalid Credentials"
             render :new
@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
         if @user.valid?
             flash[:messsage] = "Signed IN with GitHub"
             session[:user_id] = @user.id
-            redirect_to portfolios_path
+            redirect_to root_path
         else
             flash[:message] = "Credential error"
             redirect_to login_path

@@ -1,10 +1,25 @@
 <h1><%= @portfolio.name %></h1>
 <div>
+    <p> Created by: <%= @portfolio_creator.name %></p>
     <p> <%= @portfolio.description %></p>
     <p> Balance inicial: $<%= @portfolio.initial_balance %></p>
 </div>
 <%= link_to 'Back', portfolios_path %>
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %></li>
+
+<% if @portfolio.user_id == current_user.id %>
+    <%= form_with(model: [@portfolio, @trade]) do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :portfolio_id, value: @portfolio.id %>
+        <%= f.label :coin_name %>
+        <%= f.text_field :coin_name %>
+        <%= f.label :quantity %>
+        <%= f.text_field :quantity %>
+        <%= f.submit :trade %>
+    <% end %>
+<% end %>   
+
+<%= render partial: 'trades/trade' %>
 
 <%= form_with(model: [@portfolio, @comment]) do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
@@ -13,8 +28,5 @@
     <%= f.submit :comment %>
 <% end %>
 
-<% @comments.each do |comment| %>
-    <li>
-        <%= comment.user.name %> - <%= comment.content %>
-    </li>
-<% end %>
+<%= render partial: 'comments/comment' %>
+

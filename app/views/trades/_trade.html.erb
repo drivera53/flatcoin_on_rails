@@ -1,0 +1,5 @@
+<% @trades.each do |trade| %>
+    <li>
+        <%= trade.user.name %> - <%= trade.coin_name %> - <%= trade.quantity %>
+    </li>
+<% end %>
