@@ -9,22 +9,22 @@
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %></li>
 
 <h1>Form_tag</h1>
-<%= form_tag('/session', method: :post) do %>
-
-    <div class="form-group">
-      <%= label_tag(:name, "Your name:") %>
-      <%= collection_select(:cryptocurrency, :name, Cryptocurrency.all, :name, :name, prompt: "Please select your username from this dropdown") %>
-    </div>
-  
-    <div class="form-group">
-      <%= label_tag(:password, "Your password:") %>
-      <%= password_field_tag(:password, nil, class: "form-control") %>
-    </div>
-  
+<% first = '/portfolios/' %>
+<% second = '/trades/new' %>
+<% number = @portfolio.id %>
+<% array = [first, number, second] %>
+<%= form_tag(array.join, method: :post) do %>
     <div class="actions">
-      <%= submit_tag("Sign In") %>
-    </div>
-  
+    <label for="coin_id">Choose a Cryptocurrency to get started:</label>
+    <br>
+    <select name="coin_id" id="coin_id">
+    <% @cryptocurrencies.each do |cryptocurrency| %>
+        <option value="<%= cryptocurrency.id %>"><%= cryptocurrency.name %> $<%= cryptocurrency.current_price %></option>
+    <% end %>
+    </select>
+    <input type="hidden" value="<%=@portfolio.id%>" name="portfolio_id" id="portfolio_id">
+    <%= submit_tag("Trade") %>
+    </div> 
 <% end %>
 <h1>Form action</h1>
 <div>

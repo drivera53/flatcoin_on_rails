@@ -21,6 +21,7 @@ class TradesController < ApplicationController
         @coin = Cryptocurrency.find_by_id(params[:coin_id])
         #@coin.Portfolio.find_by(params[:coin_id])
         @portfolio = Portfolio.find_by_id(params[:portfolio_id])
+        @trade = Trade.new
         #redirect_to new_portfolio_trade
     end
 

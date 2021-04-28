@@ -6,6 +6,7 @@ Portfolio <%= @portfolio.name %>
 </div>
 <%= @coin.name %>
 <div class="container">
+    <h3><p>Your trade will be executed in portfolio: <%= @portfolio.name %></p></h3>
     <img src="<%= @coin.image %>" alt="<%= @coin.name %>" width="150" height="150">
     <br>
     <h3><p><%= @coin.name.upcase %></p></h3>
@@ -19,15 +20,15 @@ Portfolio <%= @portfolio.name %>
     <li class="list-group-item">Market Cap Rank: #<%= @coin.market_cap_rank %></li>
     <li class="list-group-item">Circulating Supply: $<%= @coin.circulating_supply %></li>
     </ul>
-    <% if logged_in? %>
-        <h3>Your buying Power: <%=current_user.name %> FlatCoins</h3>
-        <h3>You can buy up to: <%=current_user.name %> <%= @coin.name %></h3>
-        <form action='/trades/status' method="post">
-            <label>Quantity:</label><br>
-            <input type="integer" id="quantity" name="quantity"><br>
-            <input type="hidden" value="<%=@coin.name%>" name="coin_name" >
-            <input type="hidden" value="<%=@coin.current_price%>" name="current_price" >
-            <input type="submit" value="Buy" >
-        </form>
+    <h3>Your buying Power: <%=@portfolio.current_balance %> FlatCoins</h3>
+    <h3>You can buy up to: <%=current_user.name %> <%= @coin.name %></h3>
+    
+    <%= form_with(model: [@portfolio, @trade]) do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :portfolio_id, value: @portfolio.id %>
+        <%= f.hidden_field :coin_name, value: @coin_id %>
+        <%= f.label :quantity %>
+        <%= f.text_field :quantity %>
+        <%= f.submit :trade, value: 'Buy NOW!' %>
     <% end %>
 </div>

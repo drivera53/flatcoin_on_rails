@@ -19,8 +19,8 @@ Rails.application.routes.draw do
     resources :pickers, only: [:create]
   end
 
-  #get '/portfolios/:portfolio_id/trades/new', to: 'trades#new_portfolio_trade', as: 'new_portfolio_trade' 
-  post '/portfolios/:portfolio_id/trades/new', to: 'trades#create_portfolio_trade'
+  get '/portfolios/:portfolio_id/trades/new', to: 'portfolios#my_portfolios'
+  post '/portfolios/:portfolio_id/trades/new', to: 'trades#create_portfolio_trade', as: 'create_portfolio_trade'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

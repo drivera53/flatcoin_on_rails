@@ -15,9 +15,10 @@ class PortfoliosController < ApplicationController
 
     def create
         @portfolio = Portfolio.new(portfolio_params)
-    
-        if @portfolio.save
-          redirect_to portfolios_path
+        # Set initial_balance = to current_balance
+        @portfolio.current_balance = @portfolio.initial_balance
+        if @portfolio.save      
+          redirect_to my_portfolios_path
         else
           render :new
         end
@@ -30,6 +31,9 @@ class PortfoliosController < ApplicationController
         @comment = Comment.new
         @trades = @portfolio.trades
         @trade = Trade.new
+        if Cryptocurrency.all.count > 0
+            Cryptocurrency.refresh
+        end
         Api.new.get_top_20_cryptocurrencies
         @cryptocurrencies = Cryptocurrency.all
     end
