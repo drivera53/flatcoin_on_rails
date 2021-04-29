@@ -1,2 +1,0 @@
-class Picker < ApplicationRecord
-end

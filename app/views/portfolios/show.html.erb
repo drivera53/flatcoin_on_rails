@@ -1,67 +1,29 @@
 <h1><%= @portfolio.name %></h1>
 <div>
     <p> Created by: <%= @portfolio_creator.name %></p>
-    <p> <%= @portfolio.description %></p>
-    <p> Portfolio ID: <%= @portfolio.id %></p>
-    <p> Balance inicial: $<%= @portfolio.initial_balance %></p>
+    <p> Description: <%= @portfolio.description %></p>
+    <p> Inicial Balance: $<%= @portfolio.initial_balance %></p>
+    <% if @portfolio.user_id == current_user.id %>
+        <p><%= link_to 'Edit Portfolio', edit_portfolio_path(@portfolio) %></p>
+        <p> Buying Power: $<%= @portfolio.current_balance %></p>
+    <% end %>
+    
 </div>
-<%= link_to 'Back', portfolios_path %>
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %></li>
-
-<h1>Form_tag</h1>
-<% first = '/portfolios/' %>
-<% second = '/trades/new' %>
-<% number = @portfolio.id %>
-<% array = [first, number, second] %>
-<%= form_tag(array.join, method: :post) do %>
-    <div class="actions">
-    <label for="coin_id">Choose a Cryptocurrency to get started:</label>
-    <br>
-    <select name="coin_id" id="coin_id">
-    <% @cryptocurrencies.each do |cryptocurrency| %>
-        <option value="<%= cryptocurrency.id %>"><%= cryptocurrency.name %> $<%= cryptocurrency.current_price %></option>
-    <% end %>
-    </select>
-    <input type="hidden" value="<%=@portfolio.id%>" name="portfolio_id" id="portfolio_id">
-    <%= submit_tag("Trade") %>
-    </div> 
-<% end %>
-<h1>Form action</h1>
-<div>
-    <form action='/portfolios/<%= @portfolio.id %>/trades/new' method="post">
-    <input name="authenticity_token" type="hidden" value="f755bb0ed134b76c432144748a6d4b7a7ddf2b71" />
-    <label for="coin_id">Choose a Cryptocurrency to get started:</label>
-    <br>
-    <select name="coin_id" id="coin_id">
-    <% @cryptocurrencies.each do |cryptocurrency| %>
-        <option value="<%= cryptocurrency.id %>"><%= cryptocurrency.name %> $<%= cryptocurrency.current_price %></option>
-    <% end %>
-    </select>
-    <input type="submit" name="submit" id="submit" value="Trade">
-    </form>
-</div>
-
-<h1>Form_with create trade</h1>
-<% if @portfolio.user_id == current_user.id %>
-    <%= form_with(model: [@portfolio, @trade]) do |f| %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
-        <%= f.hidden_field :portfolio_id, value: @portfolio.id %>
-        <%= f.label :coin_name %>
-        <%= f.text_field :coin_name %>
-        <%= f.label :quantity %>
-        <%= f.text_field :quantity %>
-        <%= f.submit :trade %>
-    <% end %>
-<% end %>   
+  
 
 <%= render partial: 'trades/trade' %>
 
+<% if @portfolio.user_id == current_user.id %>
+    <%= render partial: 'trades/pick_cryptocurrency' %>
+<% end %>
+<h4>Leave your comments below.</h4>
 <%= form_with(model: [@portfolio, @comment]) do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :portfolio_id, value: @portfolio.id %>
     <%= f.text_area :content %>
     <%= f.submit :comment %>
 <% end %>
+
 
 <%= render partial: 'comments/comment' %>
 

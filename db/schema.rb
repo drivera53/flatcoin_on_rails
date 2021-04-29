@@ -37,7 +37,8 @@ ActiveRecord::Schema.define(version: 2021_04_27_195501) do
 
   create_table "trades", force: :cascade do |t|
     t.string "coin_name"
-    t.decimal "current_price"
+    t.string "coin_id"
+    t.decimal "price"
     t.integer "quantity"
     t.integer "user_id"
     t.integer "portfolio_id"

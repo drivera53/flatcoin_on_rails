@@ -1,5 +1,5 @@
 <% @comments.each do |comment| %>
     <li>
-        <%= comment.user.name %> - <%= comment.content %>
+        <%= comment.content %> - Posted by: <%= comment.user.name %>
     </li>
 <% end %>

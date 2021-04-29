@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :comments
   has_many :portfolios, through: :comments
 
+  validates :name, presence: true
+  validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 end

@@ -1,12 +1,18 @@
-<h1> My Portfolios:</h1>
-<%= link_to 'New', new_portfolio_path(@portfolio) %></li>
+<div class="container">
+  <h1> My Portfolios:</h1>
+  <a class="btn btn-primary" href="/portfolios/new" role="button">Create a NEW Portfolio</a>
+  <br>
+  <ul>
+    <% current_user.created_portfolios.each do |portf| %>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <a><%= link_to portf.name, portfolio_path(portf), class: 'btn btn-primary' %></a>
+          <h5 class="card-title"><%= portf.description %></h5>
+          <p class="card-text">Inicial Balance: $<%= portf.initial_balance %></p>
+          <p class="card-text">Created by: <%= current_user.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</div>
 
-<ul>
-  <% current_user.created_portfolios.each do |portf| %>
-    <li><%= link_to portf.name, portfolio_path(portf) %></li>
-    <li><%= portf.description %></li>
-    <li>$<%= portf.initial_balance %></li>
-    <li><%= current_user.name %></li>
-    <br>
-  <% end %>
-</ul>

@@ -1,7 +1,7 @@
 <%= render partial: 'errors/errors', locals: {model: @portfolio} %>
 <%= form_for(@portfolio) do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.label :name %><br>
+  <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :description %>
   <%= f.text_field :description %><br>

@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
             flash[:message] = "YOU JUST COMMENTED"
             redirect_to portfolio_path(@portfolio)
         else
-            flash[:message] = "BRO DIDNT WORK"
+            flash[:message] = "You comment can't be blank."
             redirect_to portfolio_path(@portfolio)
         end
 

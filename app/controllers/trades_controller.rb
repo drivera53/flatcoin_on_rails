@@ -2,13 +2,22 @@ class TradesController < ApplicationController
     def create
         @portfolio = Portfolio.find_by_id(params[:portfolio_id])
         @trade = @portfolio.trades.build(trade_params)
-        if @trade.save
-            flash[:message] = "YOU JUST TRADED"
-            redirect_to portfolio_path(@portfolio)
+        # Check balance
+        @new_balance = @portfolio.current_balance - (@trade.quantity.to_i * @trade.price.to_f)
+        if @new_balance > 0
+            @portfolio.update(current_balance: @new_balance)
+            if @trade.save
+                flash[:message] = "The order has been executed successfully."
+                redirect_to portfolio_path(@portfolio)
+            else
+                flash[:message] = "Quantity should be a number."
+                redirect_to portfolio_path(@portfolio)
+            end
         else
-            flash[:message] = "BRO DIDNT WORK"
+            flash[:message] = "You don't have enough buying power for this order."
             redirect_to portfolio_path(@portfolio)
         end
+
 
     end
 
@@ -25,8 +34,18 @@ class TradesController < ApplicationController
         #redirect_to new_portfolio_trade
     end
 
+    def destroy
+        @portfolio = Portfolio.find_by(id: params[:portfolio_id])
+        current_value = params[:total_current_value]
+        new_balance = @portfolio.current_balance + current_value.to_f
+        @portfolio.update(current_balance: new_balance)
+        @trade = Trade.find_by(id: params[:trade_id])
+        @trade.destroy
+        redirect_to portfolio_path(@portfolio)
+    end
+
     private
     def trade_params
-        params.require(:trade).permit(:coin_name, :quantity, :portfolio_id, :user_id)
+        params.require(:trade).permit(:coin_name, :coin_id, :price, :quantity, :portfolio_id, :user_id)
     end
 end

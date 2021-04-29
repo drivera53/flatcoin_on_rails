@@ -18,7 +18,7 @@ class PortfoliosController < ApplicationController
         # Set initial_balance = to current_balance
         @portfolio.current_balance = @portfolio.initial_balance
         if @portfolio.save      
-          redirect_to my_portfolios_path
+          redirect_to portfolio_path(@portfolio)
         else
           render :new
         end
@@ -51,13 +51,11 @@ class PortfoliosController < ApplicationController
         if @portfolio.valid?
             redirect_to portfolio_path(@portfolio)
         else
-            #TODO: ERROR MESSAGES
             redirect_to portfolios_path
         end
     end
 
     def destroy
-        #TODO: DRY THIS UP BRO
         @portfolio = Portfolio.find_by(id: params[:id])
         @portfolio.destroy
         redirect_to portfolios_path

@@ -11,12 +11,11 @@ Rails.application.routes.draw do
 
   delete '/logout', to: "sessions#logout"
 
-  get '/my_portfolios', to: 'portfolios#my_portfolios'
+  get '/my_portfolios', to: 'portfolios#my_portfolios', as: 'my_portfolios'
 
   resources :portfolios do
     resources :comments, only: [:create]
-    resources :trades, only: [:create]
-    resources :pickers, only: [:create]
+    resources :trades, only: [:create, :destroy]
   end
 
   get '/portfolios/:portfolio_id/trades/new', to: 'portfolios#my_portfolios'

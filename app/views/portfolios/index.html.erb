@@ -1,12 +1,13 @@
 <h1>Explore Portfolios:</h1>
-<%= link_to 'New', new_portfolio_path(@portfolio) %></li>
-
 <ul>
-  <% @portfolio.each do |portf| %>
-    <li><%= link_to portf.name, portfolio_path(portf) %></li>
-    <li><%= portf.description %></li>
-    <li>$<%= portf.initial_balance %></li>
-    <li><%= portf.user.name %></li>
-    <br>
-  <% end %>
+<% @portfolio.each do |portf| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <a><%= link_to portf.name, portfolio_path(portf), class: 'btn btn-primary' %></a>
+      <h5 class="card-title"><%= portf.description %></h5>
+      <p class="card-text">Inicial Balance: $<%= portf.initial_balance %></p>
+      <p class="card-text">Created by: <%= portf.user.name %></p>
+    </div>
+  </div>
+<% end %>
 </ul>

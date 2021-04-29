@@ -1,0 +1,17 @@
+<% first = '/portfolios/' %>
+<% second = '/trades/new' %>
+<% number = @portfolio.id %>
+<% array = [first, number, second] %>
+<%= form_tag(array.join, method: :post) do %>
+    <div class="actions">
+    <label for="coin_id">Choose a Cryptocurrency to start trading:</label>
+    <br>
+    <select name="coin_id" id="coin_id">
+    <% @cryptocurrencies.each do |cryptocurrency| %>
+        <option value="<%= cryptocurrency.id %>"><%= cryptocurrency.name %> $<%= cryptocurrency.current_price %></option>
+    <% end %>
+    </select>
+    <input type="hidden" value="<%=@portfolio.id%>" name="portfolio_id" id="portfolio_id">
+    <%= submit_tag("Trade") %>
+    </div> 
+<% end %>
