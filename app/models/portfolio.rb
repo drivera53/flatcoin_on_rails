@@ -16,7 +16,7 @@ class Portfolio < ApplicationRecord
     # def self.most_recent
     #     self.order(created_at: :asc)
     # end
-    scope :most_recent, -> { self.order(created_at: :asc) }
+    scope :most_recent, -> { self.order(created_at: :desc) }
 
     def max_coins(price)
         (self.current_balance / price).to_i

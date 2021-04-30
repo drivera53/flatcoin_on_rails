@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
+  get '/search', to: 'portfolios#search', as: 'search'
+
   delete '/logout', to: "sessions#logout"
 
   get '/my_portfolios', to: 'portfolios#my_portfolios', as: 'my_portfolios'

@@ -1,6 +1,6 @@
 <h1>Explore Portfolios:</h1>
 <ul>
-<% @portfolio.each do |portf| %>
+<% @portfolio.most_recent.each do |portf| %>
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <a><%= link_to portf.name, portfolio_path(portf), class: 'btn btn-primary' %></a>

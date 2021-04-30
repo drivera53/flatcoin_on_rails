@@ -8,6 +8,11 @@ class PortfoliosController < ApplicationController
     def my_portfolios    
     end
 
+    def search
+        @portfolio = Portfolio.search(params[:title])
+        render :index
+    end
+
     def new
         @portfolio = Portfolio.new
         #@portfolio = @user.portfolios.build

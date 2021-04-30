@@ -3,7 +3,7 @@
   <a class="btn btn-primary" href="/portfolios/new" role="button">Create a NEW Portfolio</a>
   <br>
   <ul>
-    <% current_user.created_portfolios.each do |portf| %>
+    <% current_user.created_portfolios.most_recent.each do |portf| %>
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <a><%= link_to portf.name, portfolio_path(portf), class: 'btn btn-primary' %></a>
