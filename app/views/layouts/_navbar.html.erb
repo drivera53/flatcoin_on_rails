@@ -10,24 +10,25 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <% if logged_in? %>
                     <li class="nav-item"> 
-                    <a <%= link_to 'My Portfolios', my_portfolios_path, class: 'nav-link' %></a>
+                    <%= link_to 'My Portfolios', my_portfolios_path, class: 'nav-link' %>
                     </li>
                     <li class="nav-item"> 
-                    <a <%= link_to 'Explore Portfolios', portfolios_path, class: 'nav-link' %></a>
+                    <%= link_to 'Explore Portfolios', portfolios_path, class: 'nav-link' %>
                     </li>
                     <li class="nav-item"> 
-                    <a <%= link_to 'Logout', logout_path, class: 'nav-link', method: 'delete' %></a>
+                    <%= link_to 'Logout', logout_path, class: 'nav-link', method: 'delete' %>
                     </li>
                 <% else %>
                     <li class="nav-item"> 
-                    <a <%= link_to 'Login', login_path, class: 'nav-link' %></a>
+                    <%= link_to 'Login', login_path, class: 'nav-link' %>
+                    </li>
+                    <li class="nav-item"> 
+                    <%= link_to 'Signup', signup_path, class: 'nav-link' %>
                     </li>
                     <li class="nav-item">
                     <%= link_to 'Login with GitHub', '/auth/github', method: :post, class: 'nav-link' %>
                     </li>
-                    <li class="nav-item"> 
-                    <a <%= link_to 'Signup', signup_path, class: 'nav-link' %></a>
-                    </li>
+
                 <% end %>
             </ul>
             <form class="d-flex">

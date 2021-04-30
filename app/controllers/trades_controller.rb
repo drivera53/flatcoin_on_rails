@@ -34,6 +34,16 @@ class TradesController < ApplicationController
         #redirect_to new_portfolio_trade
     end
 
+    def show
+        @portfolio = Portfolio.find_by(id: params[:portfolio_id])
+        @trade = @portfolio.trades.find_by(id: params[:id])
+        # if Cryptocurrency.all.count > 0
+        #     Cryptocurrency.refresh
+        # end
+        # Api.new.get_top_20_cryptocurrencies
+        @coin = Cryptocurrency.find_by_id(@trade.coin_id)
+    end
+
     def destroy
         @portfolio = Portfolio.find_by(id: params[:portfolio_id])
         current_value = params[:total_current_value]

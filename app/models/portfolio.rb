@@ -13,11 +13,12 @@ class Portfolio < ApplicationRecord
     # You must include at least one class level ActiveRecord scope method
     scope :search, -> (query) { self.where("name LIKE ?", "%#{query}%") }
 
-    def self.most_recent
-        self.order(created_at: :asc)
-    end
+    # def self.most_recent
+    #     self.order(created_at: :asc)
+    # end
+    scope :most_recent, -> { self.order(created_at: :asc) }
 
     def max_coins(price)
         (self.current_balance / price).to_i
-      end
+    end
 end

@@ -8,6 +8,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'omniauth'
 gem 'omniauth-github', github: 'omniauth/omniauth-github'
 gem 'faker'
+gem 'pry'
 
 gem 'net-http'
 gem 'open-uri'

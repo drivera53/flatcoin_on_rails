@@ -15,11 +15,9 @@ Rails.application.routes.draw do
 
   resources :portfolios do
     resources :comments, only: [:create]
-    resources :trades, only: [:create, :destroy]
+    resources :trades, only: [:create, :show, :destroy]
+    get '/trades/new', to: 'portfolios#my_portfolios'
+    post '/trades/new', to: 'trades#create_portfolio_trade', as: 'create_portfolio_trade'
   end
-
-  get '/portfolios/:portfolio_id/trades/new', to: 'portfolios#my_portfolios'
-  post '/portfolios/:portfolio_id/trades/new', to: 'trades#create_portfolio_trade', as: 'create_portfolio_trade'
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

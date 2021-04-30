@@ -1,0 +1,4 @@
+<h2>Way to go!</h2>
+<img src="<%= @coin.image %>" alt="<%= @coin.name %>" width="150" height="150">
+<h3>A market order to buy <%= @trade.quantity %> share(s) of <%= @trade.coin_name %> was executed at an average price of <%= @trade.price %> FlatCoins on <%=@trade.created_at%>.</h3>
+<%= link_to 'Back', portfolio_path(@portfolio) %>
