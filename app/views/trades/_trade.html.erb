@@ -43,12 +43,7 @@
             <td><%= trade.created_at %></td>
             <td><%= link_to 'Details', portfolio_trade_path(@portfolio, trade) %></td>
             <% if @portfolio.user_id == current_user.id %>
-                <% first = '/portfolios/' %>
-                <% number = @portfolio.id %>
-                <% second = '/trades/' %>
-                <% trade_number = trade.id %>
-                <% path = [first, number, second, trade_number] %>
-                <td><%= form_tag(path.join, method: :delete) do %>
+                <td><%= form_tag(portfolio_trade_path(@portfolio, trade), method: :delete) do %>
                     <input type="hidden" value="<%=trade.id%>" name="trade_id" id="trade_id">
                     <input type="hidden" value="<%=total_current_value%>" name="total_current_value" id="total_current_value">
                     <input type="hidden" value="<%=@portfolio.id%>" name="portfolio_id" id="portfolio_id">
