@@ -20,11 +20,6 @@ ActiveRecord::Schema.define(version: 2021_04_30_172117) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "pickers", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "portfolios", force: :cascade do |t|
     t.string "name"
     t.text "description"
