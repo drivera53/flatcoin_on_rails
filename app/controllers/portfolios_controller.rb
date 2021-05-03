@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-    before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
+    before_action :redirect_if_not_logged_in, only: [:index, :my_portfolios, :new, :create, :show, :edit, :update, :destroy]
 
     def index
         @portfolio = Portfolio.all   
