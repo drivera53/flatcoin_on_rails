@@ -1,4 +1,6 @@
 class TradesController < ApplicationController
+    before_action :redirect_if_not_logged_in, only: [:create, :new_portfolio_trade, :create_portfolio_trade, :show, :destroy]
+
     def create
         @portfolio = Portfolio.find_by_id(params[:portfolio_id])
         @trade = @portfolio.trades.build(trade_params)

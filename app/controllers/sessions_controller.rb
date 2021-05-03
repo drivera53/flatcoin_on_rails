@@ -36,7 +36,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to root_path
         else
-            flash[:message] = "Credential error"
+            flash[:message] = "Credentials error"
             redirect_to login_path
         end
     end
