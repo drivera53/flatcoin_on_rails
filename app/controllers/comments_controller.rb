@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+    before_action :redirect_if_not_logged_in, only: [:create]
+
     def create
         @portfolio = Portfolio.find_by_id(params[:portfolio_id])
         @comment = @portfolio.comments.build(comment_params)
