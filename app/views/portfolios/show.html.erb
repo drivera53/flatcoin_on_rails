@@ -16,14 +16,8 @@
 <% if @portfolio.user_id == current_user.id %>
     <%= render partial: 'trades/pick_cryptocurrency' %>
 <% end %>
-<h4>Leave your comments below.</h4>
-<%= form_with(model: [@portfolio, @comment]) do |f| %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :portfolio_id, value: @portfolio.id %>
-    <%= f.text_area :content %>
-    <%= f.submit :comment %>
-<% end %>
 
+<%= render partial: 'comments/new_comment' %>
 
 <%= render partial: 'comments/comment' %>
 
